@@ -5,7 +5,6 @@ import { pool } from '@/lib/db'
 import { dealSchema } from '@/lib/validations/deal'
 import type { Deal, DealFilters, Client } from '@/types/db'
 
-// ---- Чтение ----
 export async function getDeals(filters: DealFilters = {}): Promise<Deal[]> {
   const { dateFrom, dateTo, number, clientId } = filters
 

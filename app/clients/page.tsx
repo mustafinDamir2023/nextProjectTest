@@ -1,4 +1,3 @@
-// app/clients/page.tsx
 import { Suspense } from 'react'
 import Link from 'next/link'
 import { ClientsDialog } from '@/components/clients/clients-dialog'
@@ -16,8 +15,6 @@ import {
 } from '@/components/ui/table'
 import { DeleteClientButton } from '@/components/clients/delete-client-button'
 
-// Убрали instant = false, так как Suspense делает это правильно
-
 export default function ClientsPage({
   searchParams
 }: {
@@ -30,9 +27,6 @@ export default function ClientsPage({
         <ClientsDialog />
       </div>
 
-      {/* Форму поиска можно оставить здесь, но она использует search для defaultValue */}
-      {/* Чтобы форма тоже не блокировала, вынесем и её, или оставим, если она быстрая */}
-
       <Suspense
         fallback={
           <div className='p-4 text-muted-foreground'>Загрузка клиентов...</div>
@@ -44,7 +38,6 @@ export default function ClientsPage({
   )
 }
 
-// Выносим всё, что зависит от searchParams и getClients, в отдельный компонент
 async function ClientsContent({
   searchParams
 }: {

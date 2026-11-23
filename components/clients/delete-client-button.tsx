@@ -32,11 +32,16 @@ export function DeleteClientButton({ client }: { client: Client }) {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger>
-        <Button variant='ghost' size='sm' className='text-red-600'>
-          <TrashIcon />
-        </Button>
-      </DialogTrigger>
+      <DialogTrigger
+        render={
+          <button
+            type='button'
+            className='inline-flex items-center justify-center rounded-lg border border-transparent text-sm font-medium whitespace-nowrap transition-all outline-none select-none h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] hover:bg-muted hover:text-foreground [&_svg]:size-3.5 text-red-600'
+          >
+            <TrashIcon />
+          </button>
+        }
+      ></DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Удалить клиента?</DialogTitle>

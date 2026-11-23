@@ -24,14 +24,13 @@ export function DataTableViewOptions<TData>({
     <DropdownMenu>
       <DropdownMenuTrigger
         render={
-          <Button
-            variant='outline'
-            size='sm'
-            className='ml-auto hidden h-8 lg:flex'
+          <button
+            type='button'
+            className='ml-auto hidden h-8 lg:flex inline-flex items-center justify-center rounded-lg border border-border bg-background hover:bg-muted hover:text-foreground text-sm font-medium whitespace-nowrap transition-all outline-none select-none h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] [&_svg]:size-3.5'
           >
             <Settings2 className='mr-2 h-4 w-4' />
             Колонки
-          </Button>
+          </button>
         }
       />
       <DropdownMenuContent align='end' className='w-[150px]'>

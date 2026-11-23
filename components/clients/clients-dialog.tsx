@@ -27,11 +27,14 @@ export function ClientsDialog({ client }: ClientsDialogProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger
-        render={() => (
-          <Button variant={client ? 'ghost' : 'secondary'} size='sm'>
+        render={
+          <button
+            type='button'
+            className='inline-flex items-center justify-center rounded-lg border border-transparent text-sm font-medium whitespace-nowrap transition-all outline-none select-none h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] [&_svg]:size-3.5 hover:bg-muted hover:text-foreground'
+          >
             {client ? <UserPenIcon /> : <UserPlus />}
-          </Button>
-        )}
+          </button>
+        }
       />
 
       <DialogContent>

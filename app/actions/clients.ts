@@ -4,8 +4,6 @@ import { pool } from '@/lib/db'
 import { Client } from '@/types/db'
 import { revalidatePath } from 'next/cache'
 
-// Поиск по name и code (ILIKE = регистронезависимо)
-// 👇 ДОБАВЬТЕ ЭТУ СТРОКУ В САМОЕ НАЧАЛО ФУНКЦИИ
 export async function getClients(search?: string): Promise<Client[]> {
   'use cache'
 
@@ -40,7 +38,6 @@ export async function updateClient(id: number, name: string, code: string) {
 }
 
 export async function deleteClient(id: number) {
-  // Защита: сначала удаляем сделки клиента, иначе удаление
   await pool.query('DELETE FROM deals WHERE client_id = $1', [id])
   await pool.query('DELETE FROM clients WHERE id = $1', [id])
   revalidatePath('/clients')
