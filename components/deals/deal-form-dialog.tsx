@@ -23,6 +23,7 @@ import {
   SelectValue
 } from '@/components/ui/select'
 import type { Deal } from '@/types/db'
+import { Circle, CirclePlus } from 'lucide-react'
 
 function toDateInput(v: unknown): string {
   if (v instanceof Date) return v.toISOString().slice(0, 10)
@@ -56,7 +57,7 @@ export function DealFormDialog({
       ? {
           date: toDateInput(deal.date),
           number: deal.number,
-          amount: Number(deal.amount),
+          amount: deal.amount,
           client_id: deal.client_id ?? undefined,
           description: deal.description ?? ''
         }
@@ -86,8 +87,8 @@ export function DealFormDialog({
       <DialogTrigger
         render={
           trigger ?? (
-            <Button>
-              {mode === 'create' ? 'Новая сделка' : 'Редактировать'}
+            <Button variant='secondary'>
+              {mode === 'create' ? <CirclePlus /> : 'Редактировать'}
             </Button>
           )
         }

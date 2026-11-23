@@ -89,7 +89,7 @@ export function DealsFilters({
           </SelectContent>
         </Select>
       </div>
-      <Button onClick={apply} disabled={isPending}>
+      <Button onClick={apply} disabled={isPending} variant='secondary'>
         {isPending ? 'Загрузка…' : 'Применить'}
       </Button>
       <Button variant='outline' onClick={reset} disabled={isPending}>

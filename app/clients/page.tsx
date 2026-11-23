@@ -80,7 +80,7 @@ async function ClientsContent({
               <TableHead>ID</TableHead>
               <TableHead>Наименование</TableHead>
               <TableHead>Код</TableHead>
-              <TableHead className='text-right pr-22'>Действия</TableHead>
+              <TableHead className='text-right'>Действия</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -100,7 +100,7 @@ async function ClientsContent({
                 <TableCell>{client.name}</TableCell>
                 <TableCell>{client.code}</TableCell>
                 <TableCell className='text-right space-x-2'>
-                  <ClientsDialog client={client} triggerText='Изменить' />
+                  <ClientsDialog client={client} />
                   <DeleteClientButton client={client} />
                 </TableCell>
               </TableRow>

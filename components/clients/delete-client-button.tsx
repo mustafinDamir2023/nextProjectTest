@@ -14,6 +14,7 @@ import {
   DialogTrigger
 } from '@/components/ui/dialog'
 import type { Client } from '@/types/db'
+import { TrashIcon } from 'lucide-react'
 
 export function DeleteClientButton({ client }: { client: Client }) {
   // 👈 Убрали onDone
@@ -33,7 +34,7 @@ export function DeleteClientButton({ client }: { client: Client }) {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger>
         <Button variant='ghost' size='sm' className='text-red-600'>
-          Удалить
+          <TrashIcon />
         </Button>
       </DialogTrigger>
       <DialogContent>

@@ -19,8 +19,13 @@ export function UserMenu() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<Button variant='outline' size='sm' />}>
-        {session.user.email}
+      <DropdownMenuTrigger>
+        <button
+          type='button'
+          className='inline-flex w-full items-center justify-center rounded-lg border border-border bg-background hover:bg-muted hover:text-foreground text-sm font-medium whitespace-nowrap transition-all outline-none select-none size-7 gap-1 px-2.5 text-[0.8rem]'
+        >
+          {session.user.email}
+        </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align='end' className='w-56'>
         <DropdownMenuGroup>
