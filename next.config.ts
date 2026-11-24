@@ -4,9 +4,8 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   experimental: {
     agentFeedback: true,
-    cacheComponents: true // 👈 Включено
+    cacheComponents: true
   },
-  // partialPrefetching можно убрать, он включается автоматически при cacheComponents: true
   turbopack: {
     rules: {
       '*.css': {
