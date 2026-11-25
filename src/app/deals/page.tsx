@@ -1,14 +1,14 @@
 import { Suspense } from 'react'
-import { DealsContent } from '@/widgets/deals-content'
 import { auth } from '@/auth'
 import { redirect } from 'next/navigation'
+import { DealsContent } from '@/widgets/deals-content'
 
 export default async function DealsPage({
   searchParams
 }: {
   searchParams: Promise<{ [k: string]: string | string[] | undefined }>
 }) {
-  const session = await auth() // делает page динамической автоматически
+  const session = await auth()
   if (!session) redirect('/login')
 
   return (
